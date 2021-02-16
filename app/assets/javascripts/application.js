@@ -14,8 +14,6 @@
 //= require popper.js/dist/umd/popper.min
 //= require jquery
 //= require bootstrap/dist/js/bootstrap.min
-//= require tinymce
-//= require tinymce-jquery
 //= require activestorage
 //= require turbolinks
 //= require_tree .

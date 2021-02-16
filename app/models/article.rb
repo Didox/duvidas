@@ -1,3 +1,5 @@
 class Article < ApplicationRecord
-  belongs_to :tag, dependent: :destroy
+  def tags
+    ArticleTag.where(article_id: self.id)
+  end
 end

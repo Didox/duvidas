@@ -12,7 +12,7 @@
     <tr>
       <th scope="row"><%= article.id %></th>
       <td><%= article.title %></td>
-      <td><%= article.tag.description %></td>
+      <td><%= article.tags.map{|at| at.tag.description}.join(",") %></td>
       <td><%= article.body %></td>
     </tr>
   </tbody>
