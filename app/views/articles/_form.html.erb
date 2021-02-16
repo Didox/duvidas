@@ -1,0 +1,22 @@
+<%= form_with model: @article, local: true do |f| %>
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-md-2">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group col-md-2">
+        <label>Classificação</label>
+        <%= collection_select(:article, :tag_id, Tag.all, :id, :description, { prompt: "Selecione" }, { class: "form-control" }) %>
+      </div>
+      <div class="form-group col-md-2">
+        <%= f.label :body %>
+        <%= f.text_area :body, :class => "tinymce", :rows => 5, :cols => 10, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= f.submit class: "btn btn-success", data: { disable_with: "Criando....⌛" } %>
+    <%= link_to "Cancelar", articles_path, class: "btn btn-danger ml-1" %>
+  </div>
+<% end %>
